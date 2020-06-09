@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Event, Participant
 from django.contrib import messages
-from twilio.rest import Client
+#from twilio.rest import Client
 from django.utils import timezone
 from eventozone import settings
 from django.core.mail import send_mail
