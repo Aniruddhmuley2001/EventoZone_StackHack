@@ -1,0 +1,110 @@
+*{
+  scroll-behavior: smooth;
+}
+
+.value-button {
+    display: inline-block;
+    border: 1px solid #ddd;
+    margin: 0px;
+    width: 40px;
+    height: 20px;
+    text-align: center;
+    vertical-align: middle;
+     background: #eee;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .value-button:hover {
+    cursor: pointer;
+  }
+  
+  form #decrease {
+    margin-right: -4px;
+    border-radius: 8px 0 0 8px;
+    height: 30px;
+    margin-left: 3px;
+  }
+  
+  form #increase {
+    margin-left: -4px;
+   
+    border-radius: 0 8px 8px 0;
+    height: 30px;
+  }
+  
+  form #input-wrap {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  input#numb {
+    text-align: center;
+    border: none;
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+    margin: 2px;
+    width: 40px;
+    height: 30px;
+  }
+  
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+  
+  .text {
+    margin-right: 10px;
+  }
+  
+  .number {
+    margin-right: 27px;
+  }
+  
+  .email {
+    margin-right: 31px;
+  }
+  
+  .container{
+    background-color:white;
+    padding: 0.5rem;
+    border:2px solid rgb(209, 240, 240);
+    border-radius: 20px;
+    opacity: 0.92;
+  }
+
+.background h1{
+  font-size: 2.5em;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  /* margin-left: 10px; */
+  background-color: #1900ff;
+  display: block;
+  color: white;
+  border-radius: 15px;
+  filter: saturate(0);
+} 
+
+#wrap h1{
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  /* margin-left: 10px; */
+  background-color: #1900ff;
+  display: block;
+  color: white;
+  border-radius: 15px;
+  filter: saturate(0);
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}

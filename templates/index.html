@@ -1,0 +1,136 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block head %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EventoZone</title>
+<link rel = "icon" href = "{% static 'EventoZone_tabIcon.png' %}" type = "image/x-icon">
+<!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="{% static 'index.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="stylesheet" href="{% static 'animate.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/123bd1392c.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/80689f0353.js"></script>
+{% endblock %}
+
+
+{% block body %}
+
+<div id="particles-js">
+  <div id="opening_line">
+    <div class="row">
+      <div class="feature-box col-lg-5 animate__animated animate__zoomIn animate__slow" id="open_text">
+        <p style="color: white; font-size: 3rem; margin-left: 13px; font-family: 'Roboto', sans-serif;">In a chaos to manage registrations?</p>
+        <p style="color: white; font-size: 1.5rem; margin-left: 13px; font-family: 'Open Sans', sans-serif;">Now, no worries. Make your management hassle-free with our live portal, to manage all your registrations, with a good outreach too.</p>
+      </div>
+
+      <div class="feature-box col-lg-5 d-flex justify-content-end animate__animated animate__zoomIn animate__slow" style="padding-right: 5%;">
+        <p>
+          <center><img src="{% static 'chaos_1300x.jpg' %}" class="img-fluid"></center>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="cursor"><br><br>
+<div id="whyUs" data-aos="zoom-in-up" data-aos-duration="1500">
+  <h2 style="font-family: 'Roboto', sans-serif;">Why Us?</h2><br>
+  <div id="features">
+    <div class="row">
+      <div class="feature-box  col-lg-2" style="background: azure; margin: 15px; border-radius: 15px;">
+        <center><i class="icon fas fa-chart-line fa-4x"></i></center>
+        <h3>Dedicated Event Dashboard</h3>
+        <p>Provided with required data of registrations.</p>
+      </div>
+
+      <div class="feature-box  col-lg-2" style="background: azure; margin: 15px; border-radius: 15px; padding-top: 0.5%;">
+        <center><i class="icon fas fa-mobile-alt fa-4x"></i></center>
+        <h3>Email and mobile notifications</h3>
+        <p>A proof of registration, right on the participant's devices.</p>
+      </div>
+
+      <div class="feature-box  col-lg-2" style="background: azure; margin: 15px; border-radius: 15px; padding-top: 0.5%;">
+        <center><i class="icon fas fa-user-check fa-4x"></i></center>
+        <h3>User friendly interface</h3>
+        <p>Operations with sheer simplicity.</p>
+      </div>
+
+      <div class="feature-box  col-lg-2" style="background: azure; margin: 15px; border-radius: 15px; padding-top: 0.5%;">
+        <center><i class="icon fas fa-clock fa-4x"></i></center>
+        <h3>Limit for registration</h3>
+        <p>Set a Time Limit till when the registrations can be kept open.</p>
+      </div>
+
+      <div class="feature-box  col-lg-2" style="background: azure; margin: 15px; border-radius: 15px; padding-top: 0.5%;">
+        <center><i class="icon fas fa-check-double fa-4x"></i></center>
+        <h3>Unique ID for participants and events</h3>
+        <p>Again a proof of registration of event and attendees, to prevent any hassle.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div><br><br>
+
+<div id="Categories" data-aos="zoom-in-up" data-aos-duration="1500">
+  <h2 style="font-family: 'Roboto', sans-serif;">Categories</h2><br>
+  <button class="tablink" onclick="openCity('London', this, '#555')" id="defaultOpen">Attendee</button>
+  <button class="tablink" onclick="openCity('Paris', this, '#555')">Organizer</button>
+
+  <div id="London" class="tabcontent">
+    <h4 style="font-family: 'Roboto', sans-serif;">In search of any event? Yeah man! You are at the right place. Here you'll find a plethora of events, from a bang-on music concert to hilarious comedy shows, from college fests 
+      to hackathons and seminars, all of it. Excited, right? Click <a href="participantReg" target="_blank">here</a> to explore further...
+    </h4>
+  </div>
+  
+  <div id="Paris" class="tabcontent">
+    <h4 style="font-family: 'Roboto', sans-serif;">In search of a platform to host your event? Yes sir! You too are at the right place. We help people host a variety of events, from a bang-on music concert to hilarious comedy shows, from college fests 
+      to hackathons and seminars, all of it. Not yet explored? Click <a href="eventReg" target="_blank">here</a> for the same...
+    </h4>
+  </div>
+</div><br><br>
+
+<!-- <div id="About" data-aos="zoom-in-up" data-aos-duration="1500">
+  <h2 style="font-family: 'Roboto', sans-serif;">About Us</h2><br>
+  <h4 style="font-family: 'Open Sans', sans-serif;">
+    A project made by The Nishachars, as we call ourselves, comprising of Aniruddh Muley, Dishant Vyas and Shrey Mavani, is a 
+    solution to a problem which almost every institute or event manager faces, but not resolved- The issues of managing the registration of attendees. The managers 
+    and commitees have a large team to work on these, but still there are chances of human error. College Fests and programs show the face and the reputation of the institute, 
+    and the shows, that of the artists performing. One small error can cause a great havoc for the organisers and the crowd.<br><br>
+    
+    Here we are with the solution. We offer a platform for the organisers to register themselves with us and put up their events on our platform. As the registrations start, the 
+    organizer will be shown the details of the attendees, who will be given a Uniquely Generated ID (UGID) for the event, and the required analytics to get an overview of the count. 
+  </h4>
+</div><br><br> -->
+
+<div id="Contact" data-aos="zoom-in-up" data-aos-duration="1500">
+  <h2 style="font-family: 'Roboto', sans-serif;">Contact Us</h2><br>
+  <h4 style="font-family: 'Open Sans', sans-serif;">
+    Want to reach out to us? We are available 24X7 at your service. Just drop out a mail to us on <a href="mailto:eventozone2020@gmail.com">this</a> email ID. We will solve your queries as quickly as possible. Happy to help with a &#128522;
+  </h4>
+</div><br><br>
+
+<script src="{% static 'index.js' %}"></script>
+<script src="{% static 'particles.js' %}"></script>
+<script src="{% static 'app.js' %}"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+</div>
+{% endblock %}
+
+</html>

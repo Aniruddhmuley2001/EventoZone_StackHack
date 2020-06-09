@@ -1,0 +1,172 @@
+*{
+    scroll-behavior: smooth;
+    /* background: #1f2952; */
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 95vh;
+    background-color: #1f2952;
+}
+
+#body{
+    background-color: #1f2952;
+}
+
+#open_text{
+    border: #040b25 2px solid;
+    border-radius: 20px;
+    background-color: rgba(240, 248, 255, 0.123);
+    margin: 3%;
+    margin-right: 7%;
+}
+
+.img-fluid{
+    border: #040b25 solid 2px;
+}
+
+#particles-js{
+    height: 100%;
+    background: #1f2952;
+}
+
+#opening_line{
+    /* background: #fff; */
+    opacity: 0.9;
+    /* padding: 2em; */
+    /* border: #1f2952 2px solid; */
+    position: absolute;
+    top: 5rem;
+    left: 1rem;
+}
+
+#whyUs h2{
+    font-size: 2.5em;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    /* margin-left: 10px; */
+    background-color: #1900ff;
+    display: block;
+    color: white;
+    border-radius: 15px;
+    filter: saturate(0);
+    margin: 15px;
+}
+
+#features{
+    /* padding: 7% 7%; */
+    /* background-color: #fff; */
+    position: relative;
+    z-index: 1;
+    border-radius: 15px;
+    margin: 15px;
+}
+
+#About{
+    /* border: 2px solid #1900ff; */
+    margin: 15px;
+    border-radius: 15px;
+    text-align: center;
+    /* background-color: rgb(162, 168, 170); */
+    font-weight: bold;
+    font-size: large;
+    padding: 0.5rem;
+    display: inline-block;
+    color: aliceblue;
+}
+
+#About h2{
+    font-size: 2.5em;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    /* margin-left: 10px; */
+    background-color: #1900ff;
+    display: block;
+    color: white;
+    border-radius: 15px;
+    filter: saturate(0);
+}
+
+#Categories{
+    /* border: 2px solid #1900ff; */
+    margin: 15px;
+    border-radius: 15px;
+    text-align: center;
+    /* background-color: rgb(162, 168, 170); */
+    font-weight: bold;
+    font-size: large;
+    padding: 0.5rem;
+    display: inline-block; 
+    color: aliceblue;  
+}
+
+#Categories h2{
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    /* margin-left: 10px; */
+    background-color: #1900ff;
+    display: block;
+    color: white;
+    border-radius: 15px;
+    filter: saturate(0);
+}
+
+/* Style the tab buttons */
+.tablink {
+    background-color: #1f2952;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    /* padding: 14px 16px; */
+    font-size: 1.25rem;
+    width: 50%;
+    border-radius: 15px;
+    /* margin: 0.05rem; */
+  }
+  
+  /* Change background color of buttons on hover */
+  .tablink:hover {
+    background-color: #777;
+  }
+  
+  /* Set default styles for tab content */
+  .tabcontent {
+    color: white;
+    display: none;
+    /* padding: 50px; */
+    margin-top: 3rem;
+    text-align: center;
+  }
+  
+  /* Style each tab content individually */
+  /* #London {background-color:rgb(70, 60, 207);}
+  #Paris {background-color:rgb(230, 28, 105);} */
+
+#Contact{
+    /* border: 2px solid #1900ff; */
+    margin: 15px;
+    border-radius: 15px;
+    text-align: center;
+    /* background-color: rgb(162, 168, 170); */
+    font-weight: bold;
+    font-size: large;
+    padding: 0.5rem;
+    display: inline-block;
+    color: aliceblue;
+}
+
+#Contact h2{
+    font-size: 2.5em;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    /* margin-left: 10px; */
+    background-color: #1900ff;
+    display: block;
+    color: white;
+    border-radius: 15px;
+    filter: saturate(0);
+}  

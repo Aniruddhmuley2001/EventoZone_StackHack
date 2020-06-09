@@ -1,0 +1,181 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block head %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!--End Bootstrap CSS-->
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'participantReg.css' %}">
+    <link rel = "icon" href = "{% static 'EventoZone_tabIcon.png' %}" type = "image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+
+    <title>Participant Form: EventoZone</title>
+    
+    <script>
+        function increaseValue() {
+            var value = parseInt(document.getElementById('numb').value, 10);
+            value = isNaN(value) ? 0 : value;
+            value++;
+            document.getElementById('numb').value = value;
+        }
+
+        function decreaseValue() {
+            var value = parseInt(document.getElementById('numb').value, 10);
+            value = isNaN(value) ? 0 : value;
+            value < 1 ? value = 1 : '';
+            value--;
+            document.getElementById('numb').value = value;
+        }
+    </script>
+{% endblock %}
+
+{% block body %}
+<div style="background-image: url({% static 'background3.png' %}); background-color:#1f2952; min-height: 380px; background-position: center; background-size: cover; position:relative; padding: 60px;">
+    <h1 class="animate__animated animate__slideInLeft animate__slow" style="color:white; text-align: center;">Upcoming Events</h1>
+    
+    <center>
+    <div style="background-color:white; margin:10px; border-radius:1px; color: navy; font-weight: bold; text-align: center; font-size: 25px; width: 50%; border-style: solid; border-width: 2px;">
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    </div>
+    </center>
+
+    <div id="events">
+        <div class="row">
+            {% for event in events %}
+                {% if event.status == 1 %}
+                    <div class="card feature-box col-lg-3" style="background: azure; margin: 15px; border-radius: 15px; padding-top: 0.5rem;">
+                        <img class="card-img-top" src="{{event.posterLink}}" alt="No poster provided by the host." height=175px>
+                        <div class="card-body">
+                            <h3 class="card-text">{{ event.Name }}</h3><br>
+                            <p align="jusify">{{ event.Description }}<br><br>
+                            <strong>Date(s): </strong>{{ event.fromDate }}  -  {{ event.toDate }}<br>
+                            <strong>Time: </strong>{{ event.fromTime }}  -  {{ event.toTime }}<br>
+                            <strong>Registration ends at: </strong>{{ event.regEndDate }}  {{ event.regEndTime }}<br>
+                            <strong>Venue: </strong>{{ event.Location }}<br>
+                            </p>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div><br>
+
+    <div id="wrap">
+    <h1 class="animate__animated animate__slideInLeft animate__slow" style="color:white; text-align: center;">Participant Form</h1>
+    <div class="container" style="width: fit-content;">
+
+        <form method="post" action="participantReg" name="participantReg" style="font-size: large;">
+            {% csrf_token %}
+
+            <div class="form-group" style="margin-top: 20px;">
+                <label class="text" for="username">Full name</label>
+                <input type="text" class="" name='p_name' placeholder="Full Name" id="username" rows="9">
+            </div>
+
+            <div class="form-group">
+                <label class="number" for="mobile">Mobile</label>
+                <input type="number" class="" name='p_contact' placeholder="Mobile no." id="mobile">
+            </div>
+
+            <div class="form-group">
+                <label class="email" for="E-mail">E-mail</label>
+                <input type="email" class="" name='p_email' placeholder="E-mail" id="E-mail" rows="9">
+            </div>
+
+            <div class="form-group">
+                <label class="text" for="proof">Link for a valid ID proof: </label>
+                <input type="text" class="" name='p_proof' placeholder="Link here." id="proof" rows="9">
+            </div>
+                
+            <div>
+                <label>Event: </label>
+                {% for event in events %}
+                    {% if event.status == 1 %}
+                        <input type="radio" id="eventSelect" name="p_event" value={{event.id}}>
+                        <label>{{ event.Name }}</label>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </br>
+            <div class="form-check form-check-inline">Registration-Type:
+                </br>
+                <input class="form-check-input" type="radio" name="p_type" id="inlineRadio1" value="Self" onclick="SelfSelect()">
+                <label class="form-check-label" for="inlineRadio1">Self</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="p_type" id="inlineRadio2"
+                    value="Group">
+                <label class="form-check-label" for="inlineRadio2">Group</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="p_type" id="inlineRadio3"
+                    value="Corporate">
+                <label class="form-check-label" for="inlineRadio3">Corporate</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="p_type" id="inlineRadio4"
+                    value="Others">
+                <label class="form-check-label" for="inlineRadio4">Others</label>
+            </div>
+            </br>
+            </br>
+            <div class="incre">No. of People
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" name="p_tickets" id="numb" value="0" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+            </div>
+            </br>
+            <button type="button" class="btn btn-dark mt-2" data-toggle="modal" data-target="#exampleModal" onclick="return results();">Preview</button>
+    </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Preview</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card" id="card-wrap">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Edit</button>
+                    <input type="submit" class="btn btn-primary">
+                </div>
+            </div>
+        </div>
+    </div>
+  </form>
+
+
+    <script src="{% static 'participantReg.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</div>
+{% endblock %}
+</html>
